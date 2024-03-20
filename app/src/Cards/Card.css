@@ -1,0 +1,9 @@
+#info-works,
+h3 {
+  display: flex;
+  justify-content: center;
+}
+#card-text {
+  text-align: center;
+  margin-top: 15px;
+}
