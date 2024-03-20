@@ -10,8 +10,8 @@ export default function Home() {
     <>
     
     <main className="main">
-      {/* <Hero/>
-      <Card/> */}
+      <Hero/>
+      <Card/>
      
     </main>
     </>

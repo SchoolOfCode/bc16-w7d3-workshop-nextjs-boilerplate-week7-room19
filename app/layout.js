@@ -5,6 +5,7 @@ import Footer from "./src/Footer/Footer";
 import Home from "./page";
 import Card from "./src/Cards/Card";
 import Hero from "./src/Hero/Hero";
+import Founders from "./founders/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
       <Header/>
-      <Hero/>
-      <Card/>
-      
-
+      {children}
       <Footer/>
+      </body>
      
     </html>
   );
