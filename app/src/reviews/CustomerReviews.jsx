@@ -1,20 +1,31 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
-/* eslint-disable react/no-unescaped-entities */
 import "./CustomerReview.css";
 import { useState, useEffect } from "react";
 
 export default function CustomerReviews() {
-  const [country, setCountry] = useState("England");
+  const [country, setCountry] = useState(null);
   const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(
-      `https://seal-app-336e8.ondigitalocean.app/reviews?country=${country}`
-    )
-      .then((response) => response.json())
-      .then((json) => setReviews(json));
-    console.log(reviews);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://seal-app-336e8.ondigitalocean.app/reviews?country=${country}`
+        );
+        if (!response.ok) {
+          throw new Error(error);
+        }
+        const result = await response.json();
+        setReviews(result);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+    fetchData();
   }, [country]);
 
   return (
@@ -35,10 +46,11 @@ export default function CustomerReviews() {
           Scotland
         </button>
       </section>
-        {/* {country} */}
-      <section >
-        <p className="review">"{reviews.text}"</p> 
-        <p className="name">{reviews.author} - {reviews.location}</p>  
+      <section>
+        <p className="review">"{reviews.text}"</p>
+        <p className="name">
+          {reviews.author} - {reviews.location}
+        </p>
       </section>
     </section>
   );
