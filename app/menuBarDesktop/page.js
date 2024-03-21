@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function MenuBarDesktop() {
     return (
-        <div className="MenuBar">
+        <div className="menu-desktop">
 
         <section>
             <Link href="/">

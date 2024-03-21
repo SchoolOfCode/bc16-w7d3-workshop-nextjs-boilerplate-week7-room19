@@ -1,4 +1,4 @@
-import MenuBarDesktop from "@/app/Navigations/MenuBarDesktop";
+import MenuBarDesktop from "@/app/menuBarDesktop/page";
 import "../Header/Header.css";
 
 export default function Header() {

@@ -6,3 +6,19 @@
 a {
   height: 50px;
 }
+
+@media screen and (min-width: 1024px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu-desktop{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+}
