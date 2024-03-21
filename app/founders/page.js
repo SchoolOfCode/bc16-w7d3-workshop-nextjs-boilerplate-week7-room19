@@ -2,6 +2,7 @@ import Image from "next/image";
 import MikeAndMandy from "../src/images/foundersImage/founder-mike-and-mandy.png";
 import Link from "next/link";
 import FoundersCard from "../src/foundersCard/FoundersCard";
+import '../founders/founder.css'
 
 export default function Founders() {
   return (
@@ -10,7 +11,7 @@ export default function Founders() {
         <Link href="/founders"></Link>
         <h1>Meet the artisans behind our masterpieces!</h1>
         <h1>Mike and Mandy</h1>
-        <Image src={MikeAndMandy} alt="Mike and Mandy" />
+        <Image className="mike-mandy" src={MikeAndMandy} alt="Mike and Mandy" />
       </div>
       <FoundersCard/>
     </>
