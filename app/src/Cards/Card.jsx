@@ -1,18 +1,19 @@
-import howItWorks1 from '../images/how-it-works-1.png'
-import howItWorks2 from '../images/how-it-works-2.png'
-import howItWorks3 from '../images/how-it-works-3.png'
+import howItWorks1 from "../images/how-it-works-1.png";
+import howItWorks2 from "../images/how-it-works-2.png";
+import howItWorks3 from "../images/how-it-works-3.png";
 import Image from "next/image";
 
-import '../Cards/Card.css'
+import "../Cards/Card.css";
 
-
-export default function Card (){
-    return (
-        <>
-        <main>
-        
-        <section className="cards">
-          <h2 id="info-works">How it works.</h2>
+export default function Card() {
+  return (
+    <>
+      <main>
+        <div>
+          {" "}
+          <h2 id="cards-h2">How it works.</h2>
+        </div>
+        <section className="cardSection">
           <div id="card-1">
             <Image src={howItWorks1} alt="living-room" />
             <h3>Give us a call ...</h3>
@@ -37,8 +38,7 @@ export default function Card (){
             </p>
           </div>
         </section>
-        </main>
-        </>
-
-    )
+      </main>
+    </>
+  );
 }

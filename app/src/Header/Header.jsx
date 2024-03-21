@@ -1,11 +1,17 @@
-import MenuBarDesktop from "@/app/menuBarDesktop/page";
+
+import Link from "next/link";
+
 import "../Header/Header.css";
 
 export default function Header() {
   return (
     <header>
-      <a id="main-title">🔥 Fireplace Palace</a>
-      <MenuBarDesktop/>
+      <Link href="/">
+        <h1 id="main-title">🔥 Fireplace Palace</h1>
+      </Link>
+      <Link href="/founders">
+        <button className="founderBtn">Founders page</button>
+      </Link>
     </header>
   );
 }
