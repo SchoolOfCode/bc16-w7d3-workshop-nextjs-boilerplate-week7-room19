@@ -1,8 +1,33 @@
 #main-title {
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  font-size: 14pt;
+}
+header,
+a {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.menuContainer {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+  #main-title {
     font-weight: 600;
-    
+    text-decoration: none;
+    color: black;
+    font-size: 14pt;
+    margin-left: 8em;
   }
   header,
-a {
-  height: 50px;
+  a {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+  }
 }
