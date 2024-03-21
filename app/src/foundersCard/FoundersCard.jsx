@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-import founders1 from "../src/images/foundersImage/founders-1.png";
-import founders2 from "../src/images/foundersImage/founders-2.png";
-import founders3 from "../src/images/foundersImage/founders-3.png";
+import founders1 from "../images/foundersImage/founders-1.png";
+import founders2 from "../images/foundersImage/founders-2.png";
+import founders3 from "../images/foundersImage/founders-3.png";
 import Image from "next/image";
 
 import "./foundersCard.css";
