@@ -12,25 +12,25 @@ export default function FoundersCard() {
       <main>
         <section className="cardSection">
           <div id="card-1">
-            <Image src={founders1} alt="craftsman" />
             <h3>Our craftsmanship</h3>
             <p id="card-text">
               Mike and Mandy studied and honed their craft under the fireplace sensei Vik Von Blaze. Nothing gets delivered to a customer without their sign off.
             </p>
+            <Image className="img" src={founders1} alt="craftsman" />
           </div>
           <div id="card-2">
-            <Image src={founders2} alt="experience" />
             <h3>Our experience</h3>
             <p id="card-text">
               Numbers don't lie - we've been around for 20+ years and have a long list of happy customers who gladly recommend us.
             </p>
+            <Image className="img" src={founders2} alt="experience" />
           </div>
           <div id="card-3">
-            <Image src={founders3} alt="guarantee" />
             <h3>Our guarantee</h3>
             <p id="card-text">
               If you're no 100% satisfied we will fully refund your purchase. Also, we offer free repairs for the first 20 years of ownership. Find that somewhere else!
             </p>
+            <Image className="img" src={founders3} alt="guarantee" />
           </div>
         </section>
       </main>
