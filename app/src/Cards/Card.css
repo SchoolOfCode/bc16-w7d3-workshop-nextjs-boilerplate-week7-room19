@@ -8,11 +8,11 @@ h3 {
   margin-top: 15px;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .cardSection {
     display: inline-flex;
     justify-content: space-between;
   }
 }
 
-/* hi */
+
