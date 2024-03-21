@@ -16,7 +16,7 @@ a {
   height: 20px;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   #main-title {
     font-weight: 600;
     text-decoration: none;
@@ -25,9 +25,12 @@ a {
     margin-left: 8em;
   }
   header,
+
   a {
     display: flex;
     justify-content: space-between;
     height: 50px;
-  }
-}
+
+
+
+
