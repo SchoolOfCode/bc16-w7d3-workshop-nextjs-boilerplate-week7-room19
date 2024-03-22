@@ -13,3 +13,16 @@
     width: 400px;
     height: 300px;
   }
+
+  @media (min-width: 1024px){
+
+    .cardSection{
+      align-items:flex-start;
+      align-items: flex-end;
+      
+      padding-left: 0;
+    }
+
+  }
+
+ 
