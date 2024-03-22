@@ -47,6 +47,8 @@ export default function CustomerReviews() {
         </button>
       </section>
       <section>
+        {/* write an if statement to hide the review container
+        when there is no selected country */}
         <p className="review">"{reviews.text}"</p>
         <p className="name">
           {reviews.author} - {reviews.location}
