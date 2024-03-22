@@ -4,8 +4,7 @@
   color: black;
   font-size: 14pt;
 }
-header,
-a {
+header{
   display: flex;
   justify-content: space-between;
   height: 50px;

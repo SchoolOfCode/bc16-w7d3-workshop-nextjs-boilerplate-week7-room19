@@ -1,24 +1,28 @@
-import '../Footer/Footer.css';
+import "../Footer/Footer.css";
 
-export default function Footer (){
-    return <>
-        <footer>
-            <div className="media-footer">
-            <p>Find us on:</p>
-            <ul id="list">
-                <li>
-                <a>Facebook</a>
-                </li>
-                <li>
-                <a>Instagram</a>
-                </li>
-                <li>
-                <a>Ticktok</a>
-                </li>
-            </ul>
-            <small>&copy; Fireplace Palace</small>
-            <a>info@fireplace.co.uk</a>
-            </div>
-        </footer>
+export default function Footer() {
+  return (
+    <>
+      <footer>
+          <p className="find-us">Find us on:</p>
+        <div className="media-footer">
+          <ul id="list">
+            <li className="list-item">
+              <a className="social-link" href="#">Facebook</a>
+            </li>
+            <li className="list-item">
+              <a className="social-link" href="#">Instagram</a>
+            </li>
+            <li className="list-item">
+              <a className="social-link" href="#">Ticktok</a>
+            </li>
+          </ul>
+          <section className="copyright">
+          <small>&copy; Fireplace Palace</small>
+          <a>info@fireplace.co.uk</a>
+          </section>
+        </div>
+      </footer>
     </>
+  );
 }
