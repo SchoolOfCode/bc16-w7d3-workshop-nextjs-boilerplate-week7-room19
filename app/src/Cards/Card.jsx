@@ -16,7 +16,7 @@ export default function Card() {
         <section className="cardSection">
           <div id="card-1">
             <Image src={howItWorks1} alt="living-room" />
-            <h3>Give us a call ...</h3>
+            <h3 className="card-title">Give us a call ...</h3>
             <p id="card-text">
               Call us and book in a Design Consultation on a date and time to
               suit you.
@@ -24,7 +24,7 @@ export default function Card() {
           </div>
           <div id="card-2">
             <Image src={howItWorks2} alt="assessment" />
-            <h3>We come to you ...</h3>
+            <h3 className="card-title">We come to you ...</h3>
             <p id="card-text">
               We come to your home to do an assessment of the space and to your
               style preference.
@@ -32,7 +32,7 @@ export default function Card() {
           </div>
           <div id="card-3">
             <Image src={howItWorks3} alt="recommendation" />
-            <h3>We recommend ...</h3>
+            <h3 className="card-title">We recommend ...</h3>
             <p id="card-text">
               We send you a bespoke set ot fireplace recommendation.
             </p>

@@ -7,7 +7,7 @@ export default function Hero (){
     return(
         <>
         <section className="hero-banner">
-          <Image src={heromobile} alt="fireplace" />
+          <Image className='hero-img' src={heromobile} alt="fireplace" />
           <div className="banner-container">
             <h1 className="title">
               Discover the <br />
