@@ -20,6 +20,7 @@ export default function CustomerReviews() {
           throw new Error(error);
         }
         const result = await response.json();
+        // consol e.log(result)
         setReviews(result);
       } catch (error) {
         setError(error.message);
@@ -46,9 +47,9 @@ export default function CustomerReviews() {
           Scotland
         </button>
       </section>
-        {/* write an if statement to hide the review container
+      {/* write a condition to hide the review container
         when there is no selected country */}
-       {country && (
+      {country && (
         <section>
           <p className="review">"{reviews.text}"</p>
           <p className="name">

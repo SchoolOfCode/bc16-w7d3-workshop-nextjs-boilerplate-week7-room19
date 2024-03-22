@@ -9,8 +9,10 @@ export default function Founders() {
     <>
       <div id="founders">
         <Link href="/founders"></Link>
-        <h1>Meet the artisans behind our masterpieces!</h1>
-        <h1>Mike and Mandy</h1>
+        <div className="mike-mandy-banner">
+        <h1 className="banner-text">Meet the artisans behind our masterpieces!</h1>
+        <h1 className="banner-name">Mike and Mandy</h1>
+        </div>
         <Image className="mike-mandy" src={MikeAndMandy} alt="Mike and Mandy" />
       </div>
       <FoundersCard/>
