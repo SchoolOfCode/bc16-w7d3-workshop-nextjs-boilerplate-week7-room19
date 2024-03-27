@@ -2,13 +2,18 @@ import "./Form.css";
 import { useState } from "react";
 
 export default function Form() {
-  const [name, setName] = useState("");
-  const [postcode, setPostcode] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+
+const initialState = {
+  formData:{ 
+    fullName: '',
+    postcode: '',
+    address: '',
+    city: '',
+    phone: '',
+    email: '',
+  },
+  error: false
+};
 
   function handleChange(e) {
     if (e.target.name === "name") {
@@ -46,6 +51,7 @@ export default function Form() {
     console.log("Phone:", phone);
     console.log("Email:", email);
     setError("");
+
   }
 
   return (
