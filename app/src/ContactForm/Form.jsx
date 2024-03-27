@@ -1,57 +1,67 @@
 import "./Form.css";
-import { useState } from "react";
-
-export default function Form() {
+import { useReducer } from "react";
 
 const initialState = {
-  formData:{ 
-    fullName: '',
-    postcode: '',
-    address: '',
-    city: '',
-    phone: '',
-    email: '',
+  formData: {
+    fullName: "",
+    postcode: "",
+    address: "",
+    city: "",
+    phone: "",
+    email: "",
   },
-  error: false
+  error: false,
 };
 
+const reducer = (state, action) => {
+  if (action.type === "SET_FULL_NAME") {
+    console.log("Setting full name:", action.payload);
+    return {
+      ...state,
+      formData: {
+        ...state.formData,
+        fullName: action.payload,
+      },
+    };
+  } else {
+    console.log("Action type not recognized:", action.type);
+    return state;
+  }
+};
+
+export default function Form() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   function handleChange(e) {
-    if (e.target.name === "name") {
-      setName(e.target.value);
+    if (e.target.name === "fullName") {
+      dispatch({ type: "SET_FULL_NAME", payload: e.target.value });
     }
-    if (e.target.name === "postcode") {
-      setPostcode(e.target.value);
-    }
-    if (e.target.name === "address") {
-      setAddress(e.target.value);
-    }
-    if (e.target.name === "city") {
-      setCity(e.target.value);
-    }
-    if (e.target.name === "phone") {
-      setPhone(e.target.value);
-    }
-    if (e.target.name === "email") {
-      setEmail(e.target.value);
-    }
+    // if (e.target.name === "postcode") {
+    //   setPostcode(e.target.value);
+    // }
+    // if (e.target.name === "address") {
+    //   setAddress(e.target.value);
+    // }
+    // if (e.target.name === "city") {
+    //   setCity(e.target.value);
+    // }
+    // if (e.target.name === "phone") {
+    //   setPhone(e.target.value);
+    // }
+    // if (e.target.name === "email") {
+    //   setEmail(e.target.value);
+    // }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!name || !postcode || !address || !city || !phone || !email) {
-      setError("Error all fields are required - some missing.");
+    if (!e.target.name) {
+      setError(true);
       return;
     }
-    console.log("Form submitted:");
-    console.log("Name:", name);
-    console.log("Postcode:", postcode);
-    console.log("Address:", address);
-    console.log("City:", city);
-    console.log("Phone:", phone);
-    console.log("Email:", email);
-    setError("");
 
+    setError(false);
   }
 
   return (
@@ -62,12 +72,12 @@ const initialState = {
         <div className="div1">
           <ul>
             <li>
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="fullName">Full Name</label>
               <input
-                id="name"
+                id="fullName"
                 type="text"
-                name="name"
-                value={name}
+                name="fullName"
+                value={state.formData.fullName}
                 onChange={handleChange}
               ></input>
             </li>
@@ -77,7 +87,7 @@ const initialState = {
                 id="postcode"
                 type="text"
                 name="postcode"
-                value={postcode}
+                value={state.formData.postcode}
                 onChange={handleChange}
               ></input>
             </li>
@@ -87,7 +97,7 @@ const initialState = {
                 id="address"
                 type="text"
                 name="address"
-                value={address}
+                value={state.formData.address}
                 onChange={handleChange}
               ></input>
             </li>
@@ -97,7 +107,7 @@ const initialState = {
                 id="city"
                 type="text"
                 name="city"
-                value={city}
+                value={state.formData.city}
                 onChange={handleChange}
               ></input>
             </li>
@@ -112,7 +122,7 @@ const initialState = {
                 id="phone"
                 type="text"
                 name="phone"
-                value={phone}
+                value={state.formData.phone}
                 onChange={handleChange}
               ></input>
             </li>
@@ -122,14 +132,13 @@ const initialState = {
                 id="email"
                 type="text"
                 name="email"
-                value={email}
+                value={state.formData.email}
                 onChange={handleChange}
               ></input>
             </li>
           </ul>
         </div>
       </form>
-      {error && <p className="errorMsg">{error}</p>}
       <button className="btn" type="submit" onClick={handleSubmit}>
         Request Design Consultation
       </button>
