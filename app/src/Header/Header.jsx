@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 import "../Header/Header.css";
@@ -13,7 +12,7 @@ export default function Header() {
       {/* <MenuBarMobile/> */}
 
       <Link href="/founders">
-        <button className="founderBtn">Founders page</button>
+        <p className="founderBtn">Founders page</p>
       </Link>
     </header>
   );

@@ -1,11 +1,14 @@
 .banner-container {
   background-color: rgb(226, 151, 12);
-  height: 150px;
+  height: 160px;
   width: auto;
 }
-.consultation {
+.consultation,
+a {
   font-size: 1.2rem;
   font-weight: 600;
+  color: black;
+  text-decoration: none;
 }
 #phone-number {
   color: white;
@@ -13,9 +16,22 @@
 .title {
   font-size: 2.3rem;
 }
-.hero-img{
+.hero-img {
   width: 400px;
   height: 400px;
+}
+
+.consultation {
+  background-color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.consultation:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.785);
 }
 
 @media screen and (min-width: 1024px) {
