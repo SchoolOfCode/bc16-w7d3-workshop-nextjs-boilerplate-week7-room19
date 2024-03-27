@@ -1,3 +1,8 @@
+.cardSection {
+  display: flex;
+  flex-direction: column;
+}
+
 #cards-h2,
 .card-title {
   display: flex;
@@ -8,11 +13,13 @@
   margin-top: 15px;
 }
 
+.img {
+  align-items: center;
+}
+
 @media screen and (min-width: 1024px) {
   .cardSection {
     display: inline-flex;
     justify-content: space-between;
   }
 }
-
-
