@@ -12,7 +12,7 @@
 - [Configuration](#Configuration)
 - [Planning](#Planning)
 - [Resources_links](#Resources_links)
-- [Feedback](#Feedback)Resources_links
+- [Feedback](#Feedback)
 - [License](#License)
 
 
@@ -57,21 +57,25 @@ If not, add the code above.
 
  **Fist phase**
   - Creating a landing page
+
   ![landing page](app/src/images/Home-Mobile.png)
 
 
  **Second phase**
   - Adding the founders page
+
   ![alt text](app/src/images/foundersImage/Founders-Mobile.png)
 
 
  **Third phase**
   - Adding a booking form
+
   ![alt text](<app/src/images/Bookings Form - Simple.png>)
 
   
  **Final phase**
   - Validate the booking form
+  
   ![alt text](<app/src/images/Bookings Form - Complex.png>)
 
 ## Resources_links
