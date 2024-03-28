@@ -11,17 +11,80 @@ const initialState = {
     email: "",
   },
   error: false,
+  isSubmitted: false,
 };
 
 const reducer = (state, action) => {
   if (action.type === "SET_FULL_NAME") {
-    console.log("Setting full name:", action.payload);
     return {
       ...state,
       formData: {
         ...state.formData,
         fullName: action.payload,
       },
+    };
+  }
+  if (action.type === "SET_POSTCODE") {
+    return {
+      ...state,
+      formData: {
+        ...state.formData,
+        postcode: action.payload,
+      },
+    };
+  }
+  if (action.type === "SET_ADDRESS") {
+    return {
+      ...state,
+      formData: {
+        ...state.formData,
+        address: action.payload,
+      },
+    };
+  }
+  if (action.type === "SET_CITY") {
+    return {
+      ...state,
+      formData: {
+        ...state.formData,
+        city: action.payload,
+      },
+    };
+  }
+  if (action.type === "SET_PHONE") {
+    return {
+      ...state,
+      formData: {
+        ...state.formData,
+        phone: action.payload,
+      },
+    };
+  }
+  if (action.type === "SET_EMAIL") {
+    return {
+      ...state,
+      formData: {
+        ...state.formData,
+        email: action.payload,
+      },
+    };
+  }
+  if (action.type === "SUBMITTED") {
+    return {
+      ...state,
+      isSubmitted: true,
+    };
+  }
+  if (action.type === "ERROR") {
+    return {
+      ...state,
+      error: true,
+    };
+  }
+  if (action.type === "RESET_ERROR") {
+    return {
+      ...state,
+      error: false,
     };
   } else {
     console.log("Action type not recognized:", action.type);
@@ -31,39 +94,59 @@ const reducer = (state, action) => {
 
 export default function Form() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(state);
 
   function handleChange(e) {
     if (e.target.name === "fullName") {
-      dispatch({ type: "SET_FULL_NAME", payload: e.target.value });
+      dispatch({
+        type: "SET_FULL_NAME",
+        payload: e.target.value,
+      });
+    } else if (e.target.name === "postcode") {
+      dispatch({ type: "SET_POSTCODE", payload: e.target.value });
+    } else if (e.target.name === "address") {
+      dispatch({ type: "SET_ADDRESS", payload: e.target.value });
+    } else if (e.target.name === "city") {
+      dispatch({ type: "SET_CITY", payload: e.target.value });
+    } else if (e.target.name === "phone") {
+      dispatch({ type: "SET_PHONE", payload: e.target.value });
+      if (e.target.value.length < 11) {
+        dispatch({ type: "ERROR" });
+      } else {
+        dispatch({ type: "RESET_ERROR" });
+      }
+    } else if (e.target.name === "email") {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValid = emailPattern.test(e.target.value);
+
+      dispatch({ type: "SET_EMAIL", payload: e.target.value });
+
+      if (!isValid) {
+        dispatch({ type: "ERROR" });
+      } else {
+        dispatch({ type: "RESET_ERROR" });
+      }
     }
-    // if (e.target.name === "postcode") {
-    //   setPostcode(e.target.value);
-    // }
-    // if (e.target.name === "address") {
-    //   setAddress(e.target.value);
-    // }
-    // if (e.target.name === "city") {
-    //   setCity(e.target.value);
-    // }
-    // if (e.target.name === "phone") {
-    //   setPhone(e.target.value);
-    // }
-    // if (e.target.name === "email") {
-    //   setEmail(e.target.value);
-    // }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!e.target.name) {
-      setError(true);
+    dispatch({ type: "SUBMITTED" });
+
+    if (
+      !state.formData.fullName ||
+      !state.formData.postcode ||
+      !state.formData.address ||
+      !state.formData.city ||
+      !state.formData.phone ||
+      !state.formData.email
+    ) {
+      dispatch({ type: "ERROR" });
       return;
     }
-
-    setError(false);
+    dispatch({ type: "RESET_ERROR" });
   }
-
   return (
     <div>
       <h1 className="title1">Design Booking</h1>
@@ -125,6 +208,9 @@ export default function Form() {
                 value={state.formData.phone}
                 onChange={handleChange}
               ></input>
+              {state.error ? (
+                <p id="err">*Phone number must be at least 11 digits long*</p>
+              ) : null}
             </li>
             <li>
               <label htmlFor="email">Email Address</label>
@@ -135,13 +221,20 @@ export default function Form() {
                 value={state.formData.email}
                 onChange={handleChange}
               ></input>
+              {state.error ? (
+                <p id="err">*Email address must contain '@.com'*</p>
+              ) : null}
             </li>
           </ul>
         </div>
+        <button
+          className={state.isSubmitted ? "successBtn" : "btn"}
+          type="submit"
+          onClick={handleSubmit}
+        >
+          Request Design Consultation
+        </button>
       </form>
-      <button className="btn" type="submit" onClick={handleSubmit}>
-        Request Design Consultation
-      </button>
     </div>
   );
 }

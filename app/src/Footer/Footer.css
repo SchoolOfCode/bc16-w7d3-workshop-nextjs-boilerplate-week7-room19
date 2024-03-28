@@ -1,20 +1,18 @@
 #list {
-    list-style-type: none;
-
-  }
- .copyright{
+  list-style-type: none;
+}
+.copyright {
   display: flex;
   flex-direction: column;
   margin-left: 70px;
- }
-  
- .media-footer{
+}
+
+.media-footer {
   display: flex;
   flex-direction: row;
- }
-  footer {
-    background-color: rgb(207, 204, 204);
-    height: 180px;
-    padding: 20px;
-  }
-  
+}
+footer {
+  background-color: #efeaea;
+  height: 180px;
+  padding: 20px;
+}

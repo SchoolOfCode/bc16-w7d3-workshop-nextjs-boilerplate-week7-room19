@@ -37,13 +37,25 @@ export default function CustomerReviews() {
         country to see the latest review:
       </p>
       <section className="button-container">
-        <button onClick={() => setCountry("England")} id="england">
+        <button
+          className="btnReview"
+          onClick={() => setCountry("England")}
+          id="england"
+        >
           England
         </button>
-        <button onClick={() => setCountry("Wales")} id="wales">
+        <button
+          className="btnReview"
+          onClick={() => setCountry("Wales")}
+          id="wales"
+        >
           Wales
         </button>
-        <button onClick={() => setCountry("Scotland")} id="scotland">
+        <button
+          className="btnReview"
+          onClick={() => setCountry("Scotland")}
+          id="scotland"
+        >
           Scotland
         </button>
       </section>

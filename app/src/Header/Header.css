@@ -9,6 +9,8 @@
 .founderBtn {
   font-weight: 300;
   font-size: 10pt;
+  text-decoration: none;
+  color: black;
 }
 
 header {

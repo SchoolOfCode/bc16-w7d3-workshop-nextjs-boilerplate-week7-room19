@@ -19,7 +19,7 @@ export default function MenuBarMobile() {
 
   return (
     <section className="mobile-menu-container">
-      <button onClick={isOpen ? handleClose : handleOpen}>
+      <button onClick={isOpen ? handleOpen : handleClose}>
         <Image src={isOpen ? closeButton : openButton} alt="button" />
       </button>
 
