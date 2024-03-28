@@ -69,6 +69,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         isSubmitted: true,
+        isLoading: false,
       };
     case "LOADING":
       return {
@@ -147,6 +148,7 @@ export default function Form() {
         dispatch({ type: "ERROR" });
       } else {
         dispatch({ type: "REQUEST_SENT" });
+        dispatch({ type: "SUBMITTED" });
       }
     }, 2000);
   }
@@ -234,7 +236,7 @@ export default function Form() {
         <button
           className={state.isSubmitted ? "successBtn" : "btn"}
           type="submit"
-          disabled={state.isSubmitting}
+          disabled={state.isLoading || state.isSubmitted}
         >
           {state.isLoading
             ? "Submitting..."
