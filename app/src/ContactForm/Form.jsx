@@ -11,6 +11,7 @@ const initialState = {
     email: "",
   },
   error: false,
+  isLoading: false,
   isSubmitted: false,
 };
 
@@ -69,6 +70,17 @@ const reducer = (state, action) => {
         ...state,
         isSubmitted: true,
       };
+    case "LOADING":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "REQUEST_SENT":
+      return {
+        ...state,
+        isLoading: false,
+        isSubmitted: true,
+      };
     case "ERROR":
       return {
         ...state,
@@ -125,21 +137,23 @@ export default function Form() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    dispatch({ type: "SUBMITTED" });
-
-    if (
-      !state.formData.fullName ||
-      !state.formData.postcode ||
-      !state.formData.address ||
-      !state.formData.city ||
-      !state.formData.phone ||
-      !state.formData.email
-    ) {
-      dispatch({ type: "ERROR" });
-      return;
-    }
-    dispatch({ type: "RESET_ERROR" });
+    dispatch({ type: "LOADING" });
+    setTimeout(() => {
+      if (
+        !state.formData.fullName ||
+        !state.formData.postcode ||
+        !state.formData.address ||
+        !state.formData.city ||
+        !state.formData.phone ||
+        !state.formData.email
+      ) {
+        dispatch({ type: "ERROR" });
+      } else {
+        dispatch({ type: "REQUEST_SENT" });
+      }
+    }, 2000);
   }
+
   return (
     <div>
       <h1 className="title1">Design Booking</h1>
@@ -223,9 +237,13 @@ export default function Form() {
         <button
           className={state.isSubmitted ? "successBtn" : "btn"}
           type="submit"
-          onClick={handleSubmit}
+          disabled={state.isSubmitting} // Disable button during submission
         >
-          Request Design Consultation
+          {state.isLoading
+            ? "Submitting..."
+            : state.isSubmitted
+            ? "Request Sent"
+            : "Request Design Consultation"}
         </button>
       </form>
     </div>
