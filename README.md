@@ -38,7 +38,7 @@ Explore more about react and nextJs and its features in the official documentati
 
 ## Configuration
 
-__Vistest Configuration File:__
+__NextJs Configuration File:__
 
 In the package.json file in the root of the project. Check if the scripts have the following code:
 
