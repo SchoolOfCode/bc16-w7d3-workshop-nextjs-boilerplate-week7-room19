@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+![REACT](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+ ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+ ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Fireplace Palace
+  This is a School of Code Challenge for bootcampers to build a working web application using react and nextJs. This web application has a landing page, founders' page and a booking form.  
+
+## Table of Content 
+- [Installation](#Installation)
+- [Configuration](#Configuration)
+- [Planning](#Planning)
+- [Resources_links](#Resources_links)
+- [Feedback](#Feedback)Resources_links
+- [License](#License)
+
+
+## Installation 
+ _Clone this repository first, then proceed to package installation and configuration._ 
+
+### Packages and Frameworks installed 
+ __React + NextJs__
+
+__To install React + NextJs:__ 
+Make sure you have Node.js and npm installed on your machine. You can download and install them from https://nodejs.org/.
+
+__Install dependencies:__ Run the following command to install the project dependencies:
+
 ```
+npm install
+```
+__Start the app:__ Run the following command to start the development server:
+```
+npm run dev
+```
+Explore more about react and nextJs and its features in the official documentation: [NextJs Documentation](https://nextjs.org/docs). 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+__Vistest Configuration File:__
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In the package.json file in the root of the project. Check if the scripts have the following code:
 
-## Learn More
+```
+"scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+```
+If not, add the code above.
 
-To learn more about Next.js, take a look at the following resources:
+## Planning
+ As we do the planning for the project we focused on tackling one user criteria at a time.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ **Fist phase**
+  - Creating a landing page
+  ![landing page](app/src/images/Home-Mobile.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+ **Second phase**
+  - Adding the founders page
+  ![alt text](app/src/images/foundersImage/Founders-Mobile.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ **Third phase**
+  - Adding a booking form
+  ![alt text](<app/src/images/Bookings Form - Simple.png>)
+
+  
+ **Final phase**
+  - Validate the booking form
+  ![alt text](<app/src/images/Bookings Form - Complex.png>)
+
+## Resources_links
+
+Here are for resources used as guid in building the Fireplace Palace web application.
+
+## Feedback
+
+Click this [form](https://soc-hackathon-feedback.netlify.app/) for feedback and questions.
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) .
