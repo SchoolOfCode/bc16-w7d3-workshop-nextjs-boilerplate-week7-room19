@@ -14,7 +14,7 @@ const initialState = {
   isLoading: false,
   isSubmitted: false,
 };
-
+//<----------------------------------------------------------------reducer function starts here---------------------------------------------------------------->
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_FULL_NAME":
@@ -100,13 +100,10 @@ const reducer = (state, action) => {
 export default function Form() {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);
-
+  //<----------------------------------------------------------------handleChange starts here---------------------------------------------------------------->
   function handleChange(e) {
     if (e.target.name === "fullName") {
-      dispatch({
-        type: "SET_FULL_NAME",
-        payload: e.target.value,
-      });
+      dispatch({ type: "SET_FULL_NAME", payload: e.target.value });
     } else if (e.target.name === "postcode") {
       dispatch({ type: "SET_POSTCODE", payload: e.target.value });
     } else if (e.target.name === "address") {
@@ -133,7 +130,7 @@ export default function Form() {
       }
     }
   }
-
+  //<----------------------------------------------------------------handleSubmit starts here---------------------------------------------------------------->
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -153,7 +150,7 @@ export default function Form() {
       }
     }, 2000);
   }
-
+  //<----------------------------------------------------------------The form starts here---------------------------------------------------------------->
   return (
     <div>
       <h1 className="title1">Design Booking</h1>
@@ -237,7 +234,7 @@ export default function Form() {
         <button
           className={state.isSubmitted ? "successBtn" : "btn"}
           type="submit"
-          disabled={state.isSubmitting} // Disable button during submission
+          disabled={state.isSubmitting}
         >
           {state.isLoading
             ? "Submitting..."
