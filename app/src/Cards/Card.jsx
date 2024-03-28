@@ -9,9 +9,8 @@ export default function Card() {
   return (
     <>
       <main>
-        <div>
-          {" "}
-          <h2 id="cards-h2">How it works.</h2>
+        <div id="cards-h2">
+          <h2>How it works.</h2>
         </div>
         <section className="cardSection">
           <div id="card-1">

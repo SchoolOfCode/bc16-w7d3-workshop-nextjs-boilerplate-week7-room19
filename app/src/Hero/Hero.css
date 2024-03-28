@@ -1,9 +1,10 @@
 .banner-container {
-  background-color: rgb(226, 151, 12);
-  height: 160px;
+  background-color: #e48806;
+  height: 150px;
   width: auto;
+  display: flex;
 }
-.consultation,
+.btn,
 a {
   font-size: 1.2rem;
   font-weight: 600;
@@ -17,21 +18,29 @@ a {
   font-size: 2.3rem;
 }
 .hero-img {
-  width: 400px;
-  height: 400px;
+  align-items: center;
+  width: 500px;
+  height: auto;
 }
 
-.consultation {
+.btn {
   background-color: black;
   border-radius: 5px;
   text-decoration: none;
   color: white;
   padding: 10px;
+  width: 150px;
+  height: 60px;
 }
 
-.consultation:hover {
+.btn:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.785);
+}
+
+.btnContainer {
+  align-self: center;
+  justify-self: center;
 }
 
 @media screen and (min-width: 1024px) {
@@ -46,7 +55,7 @@ a {
 
   .banner-container {
     background-image: url("/images/hero-desktop.png");
-    background-color: rgb(226, 151, 12);
+    background-color: #e48806;
     height: 150px;
     width: 350px;
   }

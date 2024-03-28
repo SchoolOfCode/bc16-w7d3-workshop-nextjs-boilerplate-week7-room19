@@ -9,11 +9,11 @@ export default function Header() {
       <Link href="/">
         <h1 id="main-title">🔥 Fireplace Palace</h1>
       </Link>
-      <MenuBarMobile />
+      {/* <MenuBarMobile /> */}
 
-      {/* <Link href="/founders">
-        {/* <p className="founderBtn">Founders page</p> *}
-      </Link> */}
+      <Link href="/founders">
+        <p className="founderBtn">Founders page</p>
+      </Link>
     </header>
   );
 }
