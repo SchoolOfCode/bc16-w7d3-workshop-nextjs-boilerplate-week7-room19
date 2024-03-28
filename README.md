@@ -75,12 +75,21 @@ If not, add the code above.
   
  **Final phase**
   - Validate the booking form
-  
+
   ![alt text](<app/src/images/Bookings Form - Complex.png>)
 
 ## Resources_links
 
 Here are for resources used as guid in building the Fireplace Palace web application.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 
+- https://www.youtube.com/watch?v=0ZJgIjIuY7U 
+- https://www.youtube.com/watch?v=TOhUqDGNFtA 
+- https://www.youtube.com/watch?v=RZPAQV7JvNU
+- https://nextjs.org/docs/app/building-your-application/optimizing/fonts#google-fonts 
+- https://allplants.notion.site/An-Opinionated-Guide-to-Building-Unopinionated-Components-0f78a59de16e457c8b7bc3feec205cbd 
+- https://react.dev/learn/rendering-lists 
+
 
 ## Feedback
 
