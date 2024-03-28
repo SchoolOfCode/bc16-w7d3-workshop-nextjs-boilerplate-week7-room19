@@ -55,28 +55,32 @@ If not, add the code above.
 ## Planning
  As we do the planning for the project we focused on tackling one user criteria at a time.
 
+
  **Fist phase**
   - Creating a landing page
 
-  ![landing page](app/src/images/Home-Mobile.png)
+  ![landing page](app/src/images/Home-Mobile.png){:width="200px"}
+
 
 
  **Second phase**
   - Adding the founders page
 
-  ![alt text](app/src/images/foundersImage/Founders-Mobile.png)
+  ![Founders page](app/src/images/foundersImage/Founders-Mobile.png){:width="200px"}
+
 
 
  **Third phase**
   - Adding a booking form
 
-  ![alt text](<app/src/images/Bookings Form - Simple.png>)
+  ![booking form](<app/src/images/Bookings Form - Simple.png>){:width="200px"}
+
 
   
  **Final phase**
   - Validate the booking form
 
-  ![alt text](<app/src/images/Bookings Form - Complex.png>)
+  ![validation](<app/src/images/Bookings Form - Complex.png>){:width="200px"}
 
 ## Resources_links
 
