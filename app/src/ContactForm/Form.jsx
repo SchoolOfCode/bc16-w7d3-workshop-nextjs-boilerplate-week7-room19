@@ -15,80 +15,73 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  if (action.type === "SET_FULL_NAME") {
-    return {
-      ...state,
-      formData: {
-        ...state.formData,
-        fullName: action.payload,
-      },
-    };
-  }
-  if (action.type === "SET_POSTCODE") {
-    return {
-      ...state,
-      formData: {
-        ...state.formData,
-        postcode: action.payload,
-      },
-    };
-  }
-  if (action.type === "SET_ADDRESS") {
-    return {
-      ...state,
-      formData: {
-        ...state.formData,
-        address: action.payload,
-      },
-    };
-  }
-  if (action.type === "SET_CITY") {
-    return {
-      ...state,
-      formData: {
-        ...state.formData,
-        city: action.payload,
-      },
-    };
-  }
-  if (action.type === "SET_PHONE") {
-    return {
-      ...state,
-      formData: {
-        ...state.formData,
-        phone: action.payload,
-      },
-    };
-  }
-  if (action.type === "SET_EMAIL") {
-    return {
-      ...state,
-      formData: {
-        ...state.formData,
-        email: action.payload,
-      },
-    };
-  }
-  if (action.type === "SUBMITTED") {
-    return {
-      ...state,
-      isSubmitted: true,
-    };
-  }
-  if (action.type === "ERROR") {
-    return {
-      ...state,
-      error: true,
-    };
-  }
-  if (action.type === "RESET_ERROR") {
-    return {
-      ...state,
-      error: false,
-    };
-  } else {
-    console.log("Action type not recognized:", action.type);
-    return state;
+  switch (action.type) {
+    case "SET_FULL_NAME":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          fullName: action.payload,
+        },
+      };
+    case "SET_POSTCODE":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          postcode: action.payload,
+        },
+      };
+    case "SET_ADDRESS":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          address: action.payload,
+        },
+      };
+    case "SET_CITY":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          city: action.payload,
+        },
+      };
+    case "SET_PHONE":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          phone: action.payload,
+        },
+      };
+    case "SET_EMAIL":
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          email: action.payload,
+        },
+      };
+    case "SUBMITTED":
+      return {
+        ...state,
+        isSubmitted: true,
+      };
+    case "ERROR":
+      return {
+        ...state,
+        error: true,
+      };
+    case "RESET_ERROR":
+      return {
+        ...state,
+        error: false,
+      };
+    default:
+      console.log("Action type not recognized:", action.type);
+      return state;
   }
 };
 
