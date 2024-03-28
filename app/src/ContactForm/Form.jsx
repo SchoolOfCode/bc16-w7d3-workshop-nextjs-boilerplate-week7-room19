@@ -236,7 +236,16 @@ export default function Form() {
         <button
           className={state.isSubmitted ? "successBtn" : "btn"}
           type="submit"
-          disabled={state.isLoading || state.isSubmitted}
+          disabled={
+            state.isLoading ||
+            state.isSubmitted ||
+            !state.formData.fullName ||
+            !state.formData.postcode ||
+            !state.formData.address ||
+            !state.formData.city ||
+            !state.formData.phone ||
+            !state.formData.email
+          }
         >
           {state.isLoading
             ? "Submitting..."
